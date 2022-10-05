@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
-
-
 int main()
 {
     bool swap;
-    int n=5,j,temp;
+    int n=5,j,temp, i;
     int arr[5]={58,89,71,35,6};
-    
-    
-    do{
-        swap=false;
-        for(j=0;j<n;j++)
+       for(i=0; i<n-1; i++)
         {
+          swap=false;
+          for(j=0;j<n-i-1;j++)
+          {
             if (arr[j]>arr[j+1])
             {
                 temp=arr[j];
@@ -20,13 +17,14 @@ int main()
                 arr[j+1]=temp;
                 swap=true;
             }
+          }
+          if(swap == false)
+          break;
         }
-    }while(swap);
-    
-    for(j=0;j<n;j++)
-        {
-//p        
-            printf("%d ",arr[j]);
-        }
+   for(i=0;i<n;i++)
+     {       
+        printf("%d ",arr[i]);
+     }
 }
+
 
